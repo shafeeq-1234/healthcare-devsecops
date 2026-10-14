@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        APP_IMAGE = 'healthcare-app:1.0'
+        KUBECONFIG = '/var/lib/jenkins/.kube/config'
+    }
+
     stages {
         stage('Checkout') {
             steps {
